@@ -14,11 +14,11 @@ The `Example.MountHandler.on_mount/4` function sets the value of `socket.assigns
 
 The `Example.HomeLive.mount/3` function sets the value of `socket.assigns.test_key` to "Fallback value" _if it is not already assigned_ (using `assign_new`).
 
-When loading the `/forwarded` route in the browser, you will briefly see the value "Test value". This is replaced by "Fallback value" once the socket is connected.
+When loading the `/forwarded` route in the browser, you will briefly see the text "Test value". This is replaced by "Fallback value" once the socket is connected.
 
 It is important to note that the bug described above only manifests under the following specific circumstances:
 
-1. The route is forwarded from the main router to a second router. If you use single router, everything works.
+1. The route is forwarded from the main router to a second router. If you use a single router, everything works.
 2. The forwarded route is not `/`. If you forward the `/` route, everything works.
 3. The second router defines the `on_mount` handler as a `live_session` option. If the LiveView itself defines the `on_mount` handler, everything works.
 
